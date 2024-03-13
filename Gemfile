@@ -69,4 +69,5 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# https://www.rubydoc.info/gems/devise
 gem "devise", "~> 4.9"
