@@ -1,8 +1,21 @@
-<div>
-  <h1 class="font-bold text-4xl">Money Magnet</h1>
-  <% if current_user %>
-    <%= button_to 'Log out', destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to 'Sign in', new_user_session_path %>
-  <% end %>
+<div class="grid grid-cols-1 min-h-full place-items-center bg-mint">
+  <!-- Logo -->
+  <%= image_tag "logo.png", class: "absolute top-0 left-0 right-0 bottom-0 mx-auto my-auto my-8", width: "515", height: "515" %>
+  <br class="my-8">
+  <!-- Text Image -->
+  <%= image_tag "money_magnet_text.png", class: "absolute top-0 left-0 right-0 bottom-0 mx-auto my-auto my-8", width: "785", height: "114" %>
+    <br class="my-8">
+  <!-- Text -->
+  <div style="position: relative; margin-top: 40px">
+    <div style="position: absolute; left: 50%; transform: translate(-50%, -50%);">
+        <br class="my-8">
+      <p class="text-lg font-bold text-gray-800 mb-2">
+        Better Budget Management With
+      </p>
+      <p class="text-lg font-bold text-gray-800 mb-8">
+        Artificial Intelligence
+      </p>
+    </div>
+  </div>
+
 </div>
