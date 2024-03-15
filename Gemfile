@@ -71,3 +71,5 @@ end
 
 # https://www.rubydoc.info/gems/devise
 gem "devise", "~> 4.9"
+
+gem "plaid", "~> 25.0"
