@@ -1,21 +1,25 @@
-<div class="grid grid-cols-1 min-h-full place-items-center bg-mint">
-  <!-- Logo -->
-  <%= image_tag "logo.png", class: "absolute top-0 left-0 right-0 bottom-0 mx-auto my-auto my-24", width: "250", height: "250" %>
-  <br>
-  <br>
-  <!-- Text Image -->
-  <%= image_tag "money_magnet_text.png", class: "absolute top-0 left-0 right-0 bottom-0 mx-auto my-auto my-24", width: "392px", height: "57px" %>
+<div class="items-center justify-end flex">
+
+  <% if current_user %>
+  <%= button_to 'Log out', destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to 'Log in', new_user_session_path,  class: "whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900" %>
+    <%= link_to 'Sign up', new_user_registration_path, class: "ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-moneygreen bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-forestgreen" %>
+  <%end%>
+  
+</div>
+
+<div class="flex flex-col items-center justify-center h-screen">
+
+  <%= image_tag "logo.png", class: "mb-8", width: "515", height: "515" %>
+  
+  <%= image_tag "money_magnet_text.png", class: "mb-8", width: "785", height: "114" %>
+
+  <p class="text-center text-lg font-bold text-gray-800 mb-8">
+    Better Budget Management With 
     <br>
-    <br>
-  <!-- Text -->
-  <div style="position: relative; margin-top: 40px">
-    <div style="position: absolute; left: 50%; transform: translate(-50%, -50%); width: 400px">
-      <p class="text-lg font-bold text-gray-800 mb-2" style="text-align: center;">
-        Better Budget Management With
-      </p>
-      <p class="text-lg font-bold text-gray-800 mb-8" style="text-align: center;">
-        Artificial Intelligence
-      </p>
-    </div>
-  </div>
+    Artificial Intelligence
+  </p>
+</div>
+
 </div>

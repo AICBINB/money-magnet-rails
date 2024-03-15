@@ -4,6 +4,17 @@
 
 @layer components {
   .bg-mint {
-    background-color: #C0FFD0; // Mint green HEX value
+    background-color: #C0FFD0;
+  }
+  .bg-moneygreen {
+    background-color: #009933;
+  }
+
+  .bg-forestgreen {
+    background-color: #00661F;
+  }
+
+  .bg-magneticplum {
+    background-color: #32004C;
   }
 }
