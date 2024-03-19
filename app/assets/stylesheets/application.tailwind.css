@@ -5,10 +5,10 @@
 @tailwind utilities;
 
 @layer components {
-  .bg-MagneticGrey {
+  .bg-magnetic-grey {
     background-color: #EAE4EF;
   }
-  .text-MagneticGrey {
+  .text-magnetic-grey {
     color: #EAE4EF;
   }
   .bg-mint {
