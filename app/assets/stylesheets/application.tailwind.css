@@ -4,6 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* application.css or any other CSS file */
+
+/* Import fonts */
+@font-face {
+  font-family: 'Staatliches';
+  src: url('path/to/staatliches-regular.woff2') format('woff2'),
+       url('path/to/staatliches-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('path/to/rubik-regular.woff2') format('woff2'),
+       url('path/to/rubik-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.headline-font {
+  font-family: 'Staatliches', sans-serif;
+}
+
+.body-font {
+  font-family: 'Rubik', sans-serif;
+}
+
 @layer components {
   .bg-magnetic-grey {
     background-color: #EAE4EF;
@@ -34,5 +61,8 @@
   }
   .text-magneticplum {
     color: #32004C;
+  }
+  .form-inputs {
+  @apply w-72 font-bold text-opacity-75 rounded-t-md border-0 border-b-2 bg-magnetic-grey;
   }
 }

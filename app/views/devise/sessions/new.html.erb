@@ -1,7 +1,7 @@
 <div class="grid grid-cols-2 gap-4 p-5 bg-white rounded-md text-magneticplum font-bold">
   <div class="">
-    <%= image_tag "logo_type.png", class: "mb-8", width: "189", height: "37" %>
-    <h1 class="uppercase">
+    <%= image_tag "logo_type.png", class: "mb-8", width: "251", height: "49" %>
+    <h1 class="text-md uppercase pl-12">
       keep track of your
       <br>
       personal finances
@@ -9,7 +9,7 @@
   </div>
 
   <div>
-    <h5 class="mb-4">
+    <h5 class="text-xs mb-4">
       Log in to your Money Magnet account. This account
       <br>
       can be used across the web and mobile platforms.
@@ -17,22 +17,22 @@
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field mb-4">
-        <%= f.email_field :email, autofocus: true, placeholder: "Email address", autocomplete: "email", class: "font-normal rounded-t-md border-0 bg-magnetic-grey" %>
+        <%= f.email_field :email, autofocus: true, placeholder: "Email address", autocomplete: "email", class: "form-inputs" %>
       </div>
 
       <div class="field mb-4">
-        <%= f.password_field :password, placeholder: "Password", autocomplete: "current-password", class: "font-normal rounded-t-md border-0 bg-magnetic-grey" %>
+        <%= f.password_field :password, placeholder: "Password", autocomplete: "current-password", class: "form-inputs" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me, class: "rounded-full" %>
+        <div class="field mb-4">
+          <%= f.check_box :remember_me, class: "rounded-full border-2" %>
           <%= f.label :remember_login_info, class: "text-xs" %>
         </div>
       <% end %>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
+      <div class="actions mb-4">
+        <%= f.submit "Login", class: "flex rounded-md text-white bg-moneygreen px-20 py-2" %>
       </div>
     <% end %>
 
