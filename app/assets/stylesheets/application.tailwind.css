@@ -1,20 +1,38 @@
+/* application.tailwind.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
+  .bg-MagneticGrey {
+    background-color: #EAE4EF;
+  }
+  .text-MagneticGrey {
+    color: #EAE4EF;
+  }
   .bg-mint {
     background-color: #C0FFD0;
+  }
+  .text-mint {
+    color: #C0FFD0;
   }
   .bg-moneygreen {
     background-color: #009933;
   }
-
+  .text-moneygreen {
+    color: #009933;
+  }
   .bg-forestgreen {
     background-color: #00661F;
   }
-
+  .text-forestgreen {
+    color: #00661F;
+  }
   .bg-magneticplum {
     background-color: #32004C;
+  }
+  .text-magneticplum {
+    color: #32004C;
   }
 }
