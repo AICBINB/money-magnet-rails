@@ -3,13 +3,13 @@
 
     <%= image_tag "logo_type.svg", class: "mb-8", width: "251", height: "49" %>
 
-    <h1 class="text-md uppercase pl-12">
+    <h1 class="text-md uppercase pl-12 mb-8">
       keep track of your
       <br>
       personal finances
     </h1>
 
-    <div data-toggle-hidden-target="password" class="hidden">
+    <div data-toggle-hidden-target="password" class=" pl-12 hidden">
       <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
