@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_up_path_for(resource)
-    plaid_new_url
+    plaid_new_path
+  end
+
+  def after_inactive_sign_up_path_for(resource)
+    plaid_new_path
   end
 end
