@@ -1,25 +1,26 @@
-<div class="items-center justify-end flex">
-
-  <% if current_user %>
-  <%= button_to 'Log out', destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to 'Log in', new_user_session_path,  class: "whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900" %>
-    <%= link_to 'Sign up', new_user_registration_path, class: "ml-8 inline-flex rounded-md border border-transparent bg-moneygreen bg-origin-border px-4 py-2 font-medium text-white shadow-sm hover:bg-forestgreen" %>
-  <%end%>
+<div class="bg-mint p-4 rounded-md">
   
-</div>
+  <div class="items-center justify-end flex">
 
-<div class="flex flex-col items-center justify-center h-screen">
+    <% if current_user %>
+    <%= button_to 'Log out', destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to 'Log in', new_user_session_path,  class: "whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900" %>
+      <%= link_to 'Sign up', new_user_registration_path, class: "ml-8 inline-flex rounded-md border border-transparent bg-moneygreen bg-origin-border px-4 py-2 font-medium text-white shadow-sm hover:bg-forestgreen" %>
+    <%end%>
+    
+  </div>
 
-  <%= image_tag "logo.png", class: "mb-8", width: "515", height: "515" %>
-  
-  <%= image_tag "money_magnet_text.png", class: "mb-8", width: "785", height: "114" %>
+  <div class="flex flex-col items-center justify-center h-screen">
 
-  <p class="text-center text-lg font-bold text-gray-800 mb-8">
-    Better Budget Management With 
-    <br>
-    Artificial Intelligence
-  </p>
-</div>
+    <%= image_tag "logo.png", class: "mb-8", width: "515", height: "515" %>
+    
+    <%= image_tag "money_magnet_text.png", class: "mb-8", width: "785", height: "114" %>
 
+    <p class="text-center text-lg font-bold text-gray-800 mb-8">
+      Better Budget Management With 
+      <br>
+      Artificial Intelligence
+    </p>
+  </div>
 </div>

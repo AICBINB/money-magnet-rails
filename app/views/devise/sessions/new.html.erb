@@ -4,7 +4,7 @@
 
     <%= image_tag "logo_type.svg", class: "mb-8", width: "251", height: "49" %>
 
-    <h1 class="text-md uppercase pl-12">
+    <h1 class="headline-font text-md uppercase pl-12">
       keep track of your
       <br>
       personal finances
@@ -13,7 +13,7 @@
 
   <div>
 
-    <h5 class="text-xs mb-4">
+    <h5 class="headline-font text-xs mb-4">
       Log in to your Money Magnet account. This account
       <br>
       can be used across the web and mobile platforms.
@@ -37,10 +37,9 @@
       <% end %>
 
       <div class="actions mb-4">
-        <%= f.submit "Login", class: "flex rounded-md text-white bg-moneygreen px-20 py-2" %>
+        <%= f.submit "Login", class: "flex rounded-md text-white bg-moneygreen ml-10 px-20 py-2" %>
       </div>
     <% end %>
-
     <%= render "devise/shared/links" %>
   </div>
 </div>

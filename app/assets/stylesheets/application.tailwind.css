@@ -9,16 +9,14 @@
 /* Import fonts */
 @font-face {
   font-family: 'Staatliches';
-  src: url('path/to/staatliches-regular.woff2') format('woff2'),
-       url('path/to/staatliches-regular.woff') format('woff');
+  src: url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Staatliches&display=swap');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Rubik';
-  src: url('path/to/rubik-regular.woff2') format('woff2'),
-       url('path/to/rubik-regular.woff') format('woff');
+  src: url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
   font-weight: normal;
   font-style: normal;
 }
