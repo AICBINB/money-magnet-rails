@@ -17,7 +17,6 @@ export default class extends Controller {
   }
 
   showIdFields(event) {
-    console.log("HERE")
     event.preventDefault
 
     this.passwordTargets.forEach(passwordTarget => {
