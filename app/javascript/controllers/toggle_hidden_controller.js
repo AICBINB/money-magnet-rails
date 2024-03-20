@@ -4,10 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = [ "id", "password" ]
 
-  connect(){
-
-  }
-
   showPasswordFields(event) {
     event.preventDefault
 
