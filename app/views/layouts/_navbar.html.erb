@@ -7,28 +7,22 @@
       
       </div>
       <hr>
-      <div class="text-magneticplum hover:text-moneygreen hover:bg-gray-50 group rounded-md p-2 leading-6 font-semibold">
+      <div class="text-magneticplum group rounded-md p-2 leading-6 font-semibold">
         
-        
-      <% if current_user %>
+        <% if current_user %>
 
-        <h2 class="text-xl tracking-wider capitalize" >
-          <%= "#{current_user.first_name} #{current_user.last_name} " %>
-        </h2>
+          <h2 class="text-xl tracking-wider capitalize" >
+            <%= "#{current_user.first_name} #{current_user.last_name} " %>
+          </h2>
 
-        <div class="flex inline">
-
-          <%= image_tag "logout_cog.svg", class: "h-6 w-6 shrink-0 text-magneticplum group-hover:text-moneygreen", fill: "none", viewBox: "0 0 24 24", stroke_width: "1.5", stroke: "currentColor", aria_hidden: "true" %>   
-
-          <%= button_to 'Log out', destroy_user_session_path, :method => :delete, class: "text-sm" %>
-        </div>
-      <%end%>
-      
+          <div class="flex inline hover:text-moneygreen">
+            <div class="pl-1 pr-2">⛭</div>
+            
+            <%= button_to 'Log out', destroy_user_session_path, :method => :delete, class: "text-sm" %>
+          </div>
+        <%end%>
       </div>
-      
-      
-      
-      
+
       <nav class="flex flex-1 flex-col">
         <ul role="list" class="flex flex-1 flex-col gap-y-7">
           <li>
