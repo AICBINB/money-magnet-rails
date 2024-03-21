@@ -11,12 +11,17 @@
   </head>
 
   <body class="bg-magnetic-grey">
-    <main class="container mx-auto mt-28 px-5 flex">
-      <div>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
-    </main>
+    <div class="flex">
+      <% if current_user %>
+        <%= render 'layouts/navbar'%>
+      <% end %>
+      <main class="container mt-28 flex py-10 lg:pl-72">
+        <div class="px-4 sm:px-6 lg:px-8">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p> 
+          <%= yield %>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
