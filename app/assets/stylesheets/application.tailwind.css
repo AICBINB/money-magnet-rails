@@ -1,20 +1,69 @@
+/* application.tailwind.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* application.css or any other CSS file */
+
+/* Import fonts */
+@font-face {
+  font-family: 'Staatliches';
+  src: url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Staatliches&display=swap');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.headline-font {
+  font-family: 'Staatliches', sans-serif;
+}
+
+.body-font {
+  font-family: 'Rubik', sans-serif;
+}
+
 @layer components {
+  .bg-magnetic-grey {
+    background-color: #EAE4EF;
+  }
+  .text-magnetic-grey {
+    color: #EAE4EF;
+  }
   .bg-mint {
     background-color: #C0FFD0;
+  }
+  .text-mint {
+    color: #C0FFD0;
   }
   .bg-moneygreen {
     background-color: #009933;
   }
-
+  .text-moneygreen {
+    color: #009933;
+  }
   .bg-forestgreen {
     background-color: #00661F;
   }
-
+  .text-forestgreen {
+    color: #00661F;
+  }
   .bg-magneticplum {
     background-color: #32004C;
+  }
+  .text-magneticplum {
+    color: #32004C;
+  }
+  .bg-smoke-grey {
+    background-color: #f8f5fb;
+  }
+  .form-inputs {
+  @apply w-72 font-bold text-opacity-75 rounded-t-md border-0 border-b-2 bg-magnetic-grey;
   }
 }

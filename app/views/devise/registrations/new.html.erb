@@ -1,0 +1,63 @@
+<div data-controller="toggle-hidden" class="grid grid-cols-2 gap-4 p-5 bg-white rounded-md text-magneticplum font-bold">
+  <div>
+
+    <%= image_tag "logo_type.svg", class: "mb-8", width: "251", height: "49" %>
+
+    <h1 class="headline-font text-md uppercase pl-12 mb-8">
+      keep track of your
+      <br>
+      personal finances
+    </h1>
+
+    <div data-toggle-hidden-target="password" class=" pl-12 hidden">
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+    </div>
+  </div>
+
+  <div>
+
+    <h5 class="headline-font text-xs mb-4">
+      Create your Money Magnet account. This account
+      <br>
+      can be used across the web and mobile platforms.
+    </h5>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field mb-4">
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "First Name", data: { toggle_hidden_target: "id" }, class: "form-inputs" %>
+      </div>
+
+      <div class="field mb-4">
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", data: { toggle_hidden_target: "id" }, class: "form-inputs" %>
+      </div>
+
+      <div class="field mb-4">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", data: { toggle_hidden_target: "id" }, class: "form-inputs" %>
+      </div>
+
+      <div class="field mb-4">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", data: { toggle_hidden_target: "password" }, class: "form-inputs hidden" %>
+      </div>
+
+      <div class="field mb-4">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", data: { toggle_hidden_target: "password" }, class: "form-inputs hidden" %>
+      </div>
+
+      <div class="actions mb-4">
+        <%= f.submit "Continue", data: {toggle_hidden_target: "password"}, class: "flex rounded-md text-white bg-moneygreen px-28 py-2 hover:cursor-pointer hidden" %>
+      </div>
+    <% end %>
+
+    <button type="button" data-action="click->toggle-hidden#showPasswordFields" data-toggle-hidden-target="id" class="flex rounded-md text-white bg-moneygreen px-28 py-2">
+      Continue
+    </button>
+
+    <a data-action="click->toggle-hidden#showIdFields" data-toggle-hidden-target="password" class="px-24 underline text-xs hover:cursor-pointer hidden">
+      Go back
+    </a>
+  </div>
+</div>
