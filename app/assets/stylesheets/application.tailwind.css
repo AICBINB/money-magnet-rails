@@ -60,6 +60,9 @@
   .text-magneticplum {
     color: #32004C;
   }
+  .bg-smoke-grey {
+    background-color: #f8f5fb;
+  }
   .form-inputs {
   @apply w-72 font-bold text-opacity-75 rounded-t-md border-0 border-b-2 bg-magnetic-grey;
   }
