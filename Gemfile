@@ -71,3 +71,8 @@ end
 
 # https://www.rubydoc.info/gems/devise
 gem "devise", "~> 4.9"
+
+gem 'ruby-openai'
+
+# To use variables in .env files
+gem 'dotenv-rails', groups: [:development, :test]
