@@ -11,7 +11,7 @@ b1 = Budget.create(amount: 2500.00)
 
 puts "Seeding users..."
 
-kara = User.create(email: 'moneyluvr@moneymagnet.com', encrypted_password: 'demo123', first_name: 'Kara', last_name: "Flynn", role: "", access_token: "", budget_id: b1.id)
+kara = User.create(email: 'moneyluvr@moneymagnet.com', password: 'demo123', password_confirmation: 'demo123', first_name: 'Kara', last_name: "Flynn", role: "", access_token: "", budget_id: b1.id)
 
 puts "Seeding expenses..."
 
@@ -34,7 +34,7 @@ kara.expenses.create([
 
 puts "Seeding goals..."
 
-kara.expenses.create([
+kara.goals.create([
   {
     description: "",
     current: 0.0,
