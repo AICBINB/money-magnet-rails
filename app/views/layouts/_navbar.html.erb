@@ -1,0 +1,61 @@
+  <!-- Static sidebar for desktop -->
+  <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+    <!-- Sidebar component, swap this element with another sidebar if you like -->
+    <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
+      <div class="flex h-16 shrink-0 items-center">
+       <%= image_tag "logo_type.svg", class: "h-8 w-auto", width: "251", height: "49", alt:"Money Magnet" %>
+      
+      </div>
+      <hr>
+      <div class="text-magneticplum group rounded-md p-2 leading-6 font-semibold">
+        
+        <% if current_user %>
+
+          <h2 class="text-xl tracking-wider capitalize" >
+            <%= "#{current_user.first_name} #{current_user.last_name} " %>
+          </h2>
+
+          <div class="flex inline hover:text-moneygreen">
+            <div class="pl-1 pr-2">⛭</div>
+            
+            <%= button_to 'Log out', destroy_user_session_path, :method => :delete, class: "text-sm" %>
+          </div>
+        <%end%>
+      </div>
+
+      <nav class="flex flex-1 flex-col">
+        <ul role="list" class="flex flex-1 flex-col gap-y-7">
+          <li>
+            <ul role="list" class="-mx-2 space-y-1">
+              <li>
+                <!-- Current: "bg-gray-50 text-moneygreen", Default: "text-magneticplum hover:text-moneygreen hover:bg-gray-50" -->
+                <a href="#" class="bg-gray-50 text-moneygreen group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-magneticplum hover:text-moneygreen hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                  Recurring
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-magneticplum hover:text-moneygreen hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                  Spending
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-magneticplum hover:text-moneygreen hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                  Budgets
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-magneticplum hover:text-moneygreen hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                  Transactions
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
