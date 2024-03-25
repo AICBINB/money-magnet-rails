@@ -30,20 +30,22 @@
     </button>
 
     <button id="link-button">Link Account</button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
     <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
     <script type="text/javascript">
     (async function($) {
-
       var handler = Plaid.create({
         // Create a new link_token to initialize Link
-        token: (await $.post('create_link_token')).link_token,
+        token: (await $.post('/plaid/create_link_token')).link_token,
+        onLoad: function() {
+          // Optional, called when Link loads
+        },
         onSuccess: function(public_token, metadata) {
           // Send the public_token to your app server.
           // The metadata object contains info about the institution the
           // user selected and the account ID or IDs, if the
           // Account Select view is enabled.
-          $.post('exchange_public_token', {
+          $.post('/plaid/exchange_public_token', {
             public_token: public_token,
           });
         },
@@ -73,7 +75,7 @@
       $('#link-button').on('click', function(e) {
         handler.open();
       });
-    });
+    })(jQuery);
     </script>
 
     <button class="flex rounded-md text-white bg-moneygreen px-20 py-2 ml-8 mb-16 hover:cursor-pointer">

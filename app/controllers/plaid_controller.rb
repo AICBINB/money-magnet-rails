@@ -1,14 +1,16 @@
 class PlaidController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token
+
   def new
 
     render :new
   end
 
   def create_link_token
+    p "NEW LINK"
     client = Plaid::PlaidApi.new
-    user = current_user
-    client_user_id = user.id
+    # user = current_user
+    # client_user_id = user.id
 
     # Create the link_token with all of your configurations
     link_token_create_request = Plaid::LinkTokenCreateRequest.new({
@@ -19,16 +21,16 @@ class PlaidController < ApplicationController
       language: 'en'
     })
 
-    link_token_response = client.link_token_create(link_token_create_request)
+    response = client.link_token_create(link_token_create_request)
 
     # Pass the result to your client-side app to initialize Link
     #  and retrieve a public_token
-    content_type :json
-    response.to_json
+
+    render json: response
   end
 
   def exchange_public_token
-    binding.breaks
+    binding.break
     client = Plaid::PlaidApi.new
     request = Plaid::ItemPublicTokenExchangeRequest.new(
     {
@@ -43,7 +45,7 @@ class PlaidController < ApplicationController
     current_user.access_token = access_token
     current_user.item_id = item_id
     current_user.save
-    content_type :json
-    {public_token_exchange: "complete"}.to_json
+
+    render json: {public_token_exchange: "complete"}
   end
 end
