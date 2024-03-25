@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # {
   #   text: "A paragraph containing information about the budget and the income, expenses, and goals of the user(s)"
   # }
-  post "/advice", to: "advice#advise"
-  
+
+  get "advice/new"
+  post "advice/create"
+
 end
