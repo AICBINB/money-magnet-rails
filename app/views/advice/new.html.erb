@@ -1,0 +1,5 @@
+<%= form_with url: "/advice/create", method: :post do |form| %>
+  <%= form.text_area :text %>
+  <%= form.submit %>
+<% end %>
+<%= turbo_frame_tag "Hiya" %>
