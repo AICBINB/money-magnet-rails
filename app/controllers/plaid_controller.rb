@@ -7,14 +7,12 @@ class PlaidController < ApplicationController
   end
 
   def create_link_token
-    p "NEW LINK"
     client = Plaid::PlaidApi.new
-    # user = current_user
-    # client_user_id = user.id
+
 
     # Create the link_token with all of your configurations
     link_token_create_request = Plaid::LinkTokenCreateRequest.new({
-      user: { client_user_id: "1"},
+      user: { client_user_id: params[:current_user]},
       client_name: 'Butter',
       products: %w[auth transactions identity],
       country_codes: ['US'],
@@ -30,7 +28,6 @@ class PlaidController < ApplicationController
   end
 
   def exchange_public_token
-    binding.break
     client = Plaid::PlaidApi.new
     request = Plaid::ItemPublicTokenExchangeRequest.new(
     {
@@ -47,5 +44,17 @@ class PlaidController < ApplicationController
     current_user.save
 
     render json: {public_token_exchange: "complete"}
+  end
+
+  def accounts
+    access_token = current_user.access_token
+    auth_get_request = Plaid::AuthGetRequest.new({:access_token => access_token})
+    response = client.auth_get(auth_get_request)
+    @accounts = response.accounts
+
+  rescue Plaid::PlaidError => e
+    error_response = format_error(e)
+    pretty_print_response(error_response)
+    render json: error_response
   end
 end

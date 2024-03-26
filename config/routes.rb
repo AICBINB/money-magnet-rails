@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'plaid/new'
   post '/plaid/create_link_token'
   post '/plaid/exchange_public_token'
+  get 'plaid/accounts'
 end
