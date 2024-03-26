@@ -47,6 +47,8 @@ class PlaidController < ApplicationController
   end
 
   def accounts
+    binding.break
+    client = Plaid::PlaidApi.new
     access_token = current_user.access_token
     auth_get_request = Plaid::AuthGetRequest.new({:access_token => access_token})
     response = client.auth_get(auth_get_request)
