@@ -75,3 +75,5 @@ gem "devise", "~> 4.9"
 gem "plaid", "~> 26.0"
 
 gem "chartkick", "~> 5.0"
+
+gem "groupdate", "~> 6.4"
