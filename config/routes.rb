@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   resources :expenses
   resources :budgets
 
-  get 'transactions/index'
-
-  get 'plaid/new'
+  get '/transactions', to: 'transactions#index'
+  get '/spending', to: 'transactions#spending'
+  get '/plaid/new'
   post '/plaid/create_link_token'
   post '/plaid/exchange_public_token'
-  get 'plaid/accounts'
+  get '/plaid/accounts'
 end
