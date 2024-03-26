@@ -1,0 +1,19 @@
+  <h1>Transaction List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Account ID</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @transactions.each do |transaction| %>
+        <tr>
+          <td><%= transaction.account_id %></td>
+          <td><%= transaction.amount %></td>
+          <td><%= transaction.date.strftime("%B %d, %Y") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
