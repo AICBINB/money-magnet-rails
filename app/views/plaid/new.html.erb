@@ -17,7 +17,7 @@
 
   <div class="p-5 bg-smoke-grey rounded-r-md">
 
-    <button class="bg-white inline-flex mt-28 mb-8 ml-10 rounded-md">
+    <button  id="link-button" class="bg-white inline-flex mt-28 mb-8 ml-10 rounded-md">
       <span class="">
        <%= image_tag "plaid_logo.svg", class: "m-1", width: "23", height: "23" %>
 		  </span>
@@ -29,7 +29,6 @@
       </span>
     </button>
 
-    <button id="link-button">Link Account</button>
     <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
     <script type="text/javascript">
     (async function($) {
@@ -77,9 +76,7 @@
     })(jQuery);
     </script>
 
-    <button class="flex rounded-md text-white bg-moneygreen px-20 py-2 ml-8 mb-16 hover:cursor-pointer">
-      Continue
-    </button>
+    <%= button_to "Continue", transactions_path, method: :get, class: "flex rounded-md text-white bg-moneygreen px-20 py-2 ml-8 mb-16 hover:cursor-pointer" %>
   </div>
 </div>
   
